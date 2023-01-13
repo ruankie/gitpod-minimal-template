@@ -1,4 +1,9 @@
 tasks:
   - name: conda venv
-    init: wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh -O ~/miniconda.sh && bash ~/miniconda.sh -b -p && rm ~/miniconda.sh && source $HOME/miniconda3/bin/activate && conda env create -f conda.yml
+    init: |
+      wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh -O ~/miniconda.sh
+      bash ~/miniconda.sh -b -p
+      rm ~/miniconda.sh
+      source $HOME/miniconda3/bin/activate
+      conda env create -f conda.yml
     command: conda activate venv
